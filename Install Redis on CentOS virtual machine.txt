@@ -1,0 +1,73 @@
+
+1. Check firewall state:
+=====================================================
+
+firewall-cmd --state
+
+2. Update yum packages
+=====================================================
+
+yum update -y
+
+3. Add the EPEL repository
+=====================================================
+
+yum install epel-release
+
+4. Install Redis
+=====================================================
+
+yum install redis
+
+5. Start Redis
+=====================================================
+
+systemctl start redis
+
+6. Set automatic start Redis on boot
+=====================================================
+
+systemctl enable redis
+
+7. Verify the Installation
+=====================================================
+
+redis-cli ping
+
+8. Edit /etc/redis.conf
+=====================================================
+
+vim /etc/redis.conf
+
+-------------------------------------
+appendonly yes
+appendfsync everysec
+-------------------------------------
+
+9. Restart Redis to apply changes
+=====================================================
+
+systemctl restart redis
+
+10. Configure server
+=====================================================
+
+To improve Redis performance, set the Linux kernel overcommit memory setting to 1:
+
+sysctl vm.overcommit_memory=1
+
+This immediately changes the overcommit memory setting, but the change will not persist across reboots. To make it permanent, add vm.overcommit_memory = 1 to /etc/sysctl.conf:
+
+vim /etc/sysctl.conf
+
+-------------------------------------
+vm.overcommit_memory = 1
+-------------------------------------
+
+
+
+
+
+
+
+
