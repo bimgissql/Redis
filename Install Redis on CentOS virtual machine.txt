@@ -44,6 +44,19 @@ appendonly yes
 appendfsync everysec
 -------------------------------------
 
+Uncomment requirepass line and set password:
+
+-------------------------------------
+requirepass yourpassowrd
+-------------------------------------
+
+Comment bind:
+
+-------------------------------------
+# bind 127.0.0.1
+-------------------------------------
+
+
 9. Restart Redis to apply changes
 =====================================================
 
