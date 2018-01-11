@@ -47,7 +47,7 @@ appendfsync everysec
 Uncomment requirepass line and set password:
 
 -------------------------------------
-requirepass yourpassowrd
+requirepass yourpassword
 -------------------------------------
 
 Comment bind:
@@ -80,6 +80,16 @@ vm.overcommit_memory = 1
 
 
 
+=====================================================
+=====================================================
+
+Note:
+Remember to call redis-cli with password set by requirepass option in /etc/redis.conf:
+
+redis-cli -a 'yourpassword'
+
+=====================================================
+=====================================================
 
 
 
